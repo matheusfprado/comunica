@@ -1,0 +1,41 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const article = {
+  author: 'Carlos Silva',
+  date: '2024-12-02',
+  title: 'Amazon Inova com Plataforma de Compras Sustentáveis',
+  description:
+    'A Amazon está liderando a transformação do e-commerce ao lançar uma nova plataforma que promove compras mais sustentáveis, oferecendo opções de produtos ecológicos e embalagens com menor impacto ambiental.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+A Amazon está ampliando seu compromisso com a sustentabilidade ao lançar uma nova plataforma que oferece produtos ecológicos e embalagens mais sustentáveis. Essa plataforma tem como objetivo ajudar os consumidores a fazer escolhas mais conscientes, promovendo alternativas de baixo impacto ambiental.
+
+Com essa iniciativa, a Amazon está integrando práticas de economia circular em seu modelo de negócios, incentivando a compra de produtos feitos com materiais recicláveis e biodegradáveis. Além disso, os clientes podem acessar informações detalhadas sobre a pegada de carbono de cada item.
+
+```js
+import { ecoProducts } from '@amazon/sustainability'
+
+export function SustainableProducts({ category }) {
+  const products = ecoProducts(category)
+
+  return (
+    <div>
+      <h2>Produtos Sustentáveis</h2>
+      {products.map((product) => (
+        <div key={product.id}>
+          <h3>{product.name}</h3>
+          <p>{product.description}</p>
+          <button>Adicionar ao Carrinho</button>
+        </div>
+      ))}
+    </div>
+  )
+}
+```

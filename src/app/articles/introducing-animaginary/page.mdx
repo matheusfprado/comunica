@@ -1,0 +1,40 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const article = {
+  author: 'Jane Doe',
+  date: '2024-12-02',
+  title: 'Amazon Introduz Nova Experiência de Compras Impulsionada por IA',
+  description:
+    'A Amazon está transformando as compras online com sua nova plataforma movida por inteligência artificial, projetada para personalizar as experiências dos clientes e agilizar a descoberta de produtos.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+A Amazon está transformando a experiência de compras online com sua nova plataforma impulsionada por inteligência artificial. O objetivo é personalizar ainda mais a jornada do cliente, tornando a descoberta de produtos mais fácil e precisa, com recomendações ajustadas aos interesses individuais de cada usuário.
+
+Com o uso de aprendizado de máquina e análise de dados em tempo real, o novo sistema da Amazon pode antecipar as necessidades do cliente e oferecer sugestões em tempo real, criando uma experiência de compra mais intuitiva e personalizada.
+
+```js
+import { recommendProduct } from '@amazon/ai'
+
+export function RecommendedProducts({ customerId }) {
+  const recommendations = recommendProduct(customerId)
+
+  return (
+    <div>
+      {recommendations.map((product) => (
+        <div key={product.id}>
+          <h3>{product.name}</h3>
+          <p>{product.description}</p>
+          <button>Adicionar ao Carrinho</button>
+        </div>
+      ))}
+    </div>
+  )
+}
+```
